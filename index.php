@@ -8,6 +8,7 @@
 
     <!-- link css -->
     <link rel="stylesheet" href="src/css/mystyle.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="src/css/signin.css" />
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -19,55 +20,36 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Nav -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
-    <a class="navbar-brand" href="#">Home</a>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">				
-      </ul>
-    </div>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">REPORT</a>
-        </li>	
-        <li class="nav-item">
-            <a class="nav-link" href="#">SIGN UP</a>
-        </li>		
-        <li class="nav-item">
-            <a class="nav-link" href="?page=signin">SIGN IN</a>
-        </li>		
-        <li class="nav-item dropdown" style="float: right;">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            USER
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -71% !important">
-            <a class="dropdown-item" href="#">Acount Setting</a>
-            <a class="dropdown-item" href="#">Shop Setting</a>
-            <a class="dropdown-item" href="#">Log Out</a>
-          </div>
-        </li>	
-      </ul>
-    </div>
-  </nav>
+  <?php
+    // connect database
+    $conn = mysqli_connect('localhost', 'root', '', 'group3') or die(mysqli_error($conn));
+
+    // set charset utf8
+    mysqli_set_charset($conn,"utf8");
+
+    // start session
+    session_start();
+  ?>
+
+  <?php include 'content/nav.php'; ?>
 
   <div>
     <!-- Content -->
     <?php
         if (!isset($_GET['page'])) {
-            require_once 'content/index.html';
+            require_once 'content/index.php';
         } else {
             switch ($_GET['page']) {
                 case 'signin':
-                    require_once 'content/signin.html';
+                    require_once 'content/signin.php';
+                    break;
+                case 'logout':
+                    require_once 'content/logout.php';
                     break;
                 // case 'register':
                 //     require_once 'content/register.php';
                 //     break;
-                // case 'logout':
-                //     require_once 'content/logout.php';
-                //     break;
+               
                 // case 'gallery':
                 //     require_once 'content/gallery.php';
                 //     break;
