@@ -20,7 +20,7 @@ body {
     background-clip: border-box;
     float: left;
     border: solid black 1px;
-    max-height: 90px;
+    height: 90px;
     margin-left: 10%;
     overflow: scroll;
 }
@@ -72,4 +72,40 @@ body {
 }
 .div-up{
     width: 100%;
+}
+.card-act-add {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 10%;
+    height: 50%;
+    word-wrap: break-word;
+    background-color: white;
+    background-clip: border-box;
+    float: left;
+    border: solid black 1px;
+    height: 90px;
+    margin-left: 10%;
+    overflow: scroll;
+}
+.add-icon {
+    width: 40%;
+    object-fit: cover;
+    margin-left: 30%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.modal-form {
+    text-align: left
+}
+.modal-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+    /* margin-left: 5%; */
 }

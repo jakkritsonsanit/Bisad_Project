@@ -60,10 +60,16 @@
 </html>
 
 <script>
-  function succes(){
+  function success(){
     swal('Success!!', 'You account is created!', 'success')
     .then((value) => {
       location.href='?page=home';
+    });
+  };
+	function invalid(){
+    swal('Opps!', 'Username is taken', 'warning')
+    .then((value) => {
+      location.href='?page=signin';
     });
   };
 </script>
@@ -73,7 +79,10 @@
     $username = $_POST['username'];
     $query = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
     if ($result = mysqli_fetch_assoc($query)) {
-      echo "<script>alert('username is taken')</script>";
+			echo '<script type="text/javascript">',
+				'invalid();',
+				'</script>'
+			;
     }
     else {
         $firstname = $_POST['firstname'];
@@ -87,7 +96,7 @@
         mysqli_query($conn, "insert into user (firstname, lastname, username, password, email, phone, role, image) values ('$firstname','$lastname','$username','$password','$email','$phone','$role','$imagename')") or die(mysqli_error($conn));
         $_SESSION['username'] = $username;
         echo '<script type="text/javascript">',
-					'succes();',
+					'success();',
 					'</script>'
 				;
     }
