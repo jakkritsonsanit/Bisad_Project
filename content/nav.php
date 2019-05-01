@@ -1,3 +1,13 @@
+<?php
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+        $result = mysqli_fetch_assoc($query);
+        $role = $result['role'];
+        $img = $result['image'];
+    }
+?>
+
 <!-- Nav -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
     <a class="navbar-brand" href="?page=home" style="margin-left:50px">Home</a>
@@ -8,29 +18,33 @@
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ml-auto">
-        <?php if (isset($_SESSION['username'])):?>
+        <?php if (isset($username)):?>
             <li class="nav-item">
                 <a class="nav-link" href="#">REPORT</a>
             </li>
         <?php endif ?>
 
-        <?php if (!isset($_SESSION['username'])):?>
+        <?php if (!isset($username)):?>
             <li class="nav-item">
-                <a class="nav-link" href="#">SIGN UP</a>
+                <a class="nav-link" href="?page=register">SIGN UP</a>
             </li>		
             <li class="nav-item">
                 <a class="nav-link" href="?page=signin">SIGN IN</a>
             </li>
         <?php endif ?>
-        <?php if (isset($_SESSION['username'])):?>
+        <?php if (isset($username)):?>
             <li class="nav-item dropdown" style="float: right;">
             <a class="nav-link dropdown-toggle" style="padding-bottom:0 !important" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!-- USER -->
-                <img class="img-pro" src="src/img/profile.jpg">
+                
+                <img class="img-pro" src="<?php echo($img) ?>">
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -120% !important">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -215% !important">
+                <a class="dropdown-item" href="#"><?php echo($username) ?></a>
                 <a class="dropdown-item" href="#">Acount Setting</a>
-                <a class="dropdown-item" href="#">Shop Setting</a>
+                <?php if (!$role = "custome") :?>
+                    <a class="dropdown-item" href="#">Shop Setting</a>
+                <?php endif ?>
                 <a class="dropdown-item" href="?page=logout">Log Out</a>
             </div>
             </li>

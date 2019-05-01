@@ -33,6 +33,7 @@
         $count = 1;
         $query = mysqli_query($conn, "select * from block");
         while($result = mysqli_fetch_assoc($query)) {
+          
           $name_query = mysqli_query($conn, "select name from shop where shop_id =".$result['shop_id']) or die(mysqli_error($query));
           $result_name = mysqli_fetch_assoc($name_query);
           $name = $result_name['name'];

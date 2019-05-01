@@ -9,15 +9,36 @@
     <!-- link css -->
     <link rel="stylesheet" href="src/css/mystyle.css">
     <link rel="stylesheet" type="text/css" media="screen" href="src/css/signin.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/register.css">
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+    <!-- link css for template-->
+    <link rel="stylesheet" type="text/css" href="src/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/component.css" />
+
+    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 
     <!-- link Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+        .dropdown-toggle::after {
+            display: none;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+        }
+    </style>
 </head>
 <body>
   <?php
@@ -46,9 +67,9 @@
                 case 'logout':
                     require_once 'content/logout.php';
                     break;
-                // case 'register':
-                //     require_once 'content/register.php';
-                //     break;
+                case 'register':
+                    require_once 'content/register.php';
+                    break;
                
                 // case 'gallery':
                 //     require_once 'content/gallery.php';
