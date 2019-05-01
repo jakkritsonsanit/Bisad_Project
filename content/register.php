@@ -59,6 +59,15 @@
 </body>
 </html>
 
+<script>
+  function succes(){
+    swal('Success!!', 'You account is created!', 'success')
+    .then((value) => {
+      location.href='?page=home';
+    });
+  };
+</script>
+
 <?php
   if (isset($_POST['username'])) {
     $username = $_POST['username'];
@@ -77,7 +86,10 @@
         move_uploaded_file($_FILES['image']['tmp_name'], $imagename);
         mysqli_query($conn, "insert into user (firstname, lastname, username, password, email, phone, role, image) values ('$firstname','$lastname','$username','$password','$email','$phone','$role','$imagename')") or die(mysqli_error($conn));
         $_SESSION['username'] = $username;
-        echo "<script>location.href='?page=home';</script>";
+        echo '<script type="text/javascript">',
+					'succes();',
+					'</script>'
+				;
     }
   }
 ?>

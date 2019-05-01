@@ -51,6 +51,22 @@
   </div>
 </body>
 
+<script>
+  function succes(){
+    swal('Success!!', 'You clicked the button!', 'success')
+    .then((value) => {
+      location.href='?page=home';
+    });
+  };
+
+  function invalid(){
+    swal('Opps!', 'Invalid username or password', 'error')
+    .then((value) => {
+      location.href='?page=signin';
+    });
+  }
+</script>
+
 <?php
     if (isset($_POST['username'])){
         // echo("<script>alert('pass')</script>");
@@ -59,10 +75,17 @@
         $query = mysqli_query($conn, "select * from user where username='$username' and    password='$password'") or die(mysqli_error($conn));
         if ($result = mysqli_fetch_assoc($query)){
             $_SESSION['username'] = $result['username'];
-            echo "<script>location.href='?page=home';</script>";
+            echo '<script type="text/javascript">',
+              'succes();',
+              '</script>'
+            ;
+            // echo("<script>location.href='?page=home';</script>");
         }
         else {
-            echo "<script>alert('invalid username or passord')</script>";
+          echo '<script type="text/javascript">',
+            'invalid();',
+            '</script>'
+          ;
         }
     }
 ?>
