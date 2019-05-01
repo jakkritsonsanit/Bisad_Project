@@ -40,7 +40,7 @@ body {
     text-decoration: none;
     float: left; 
 }
-.box{
+.ed-box{
     margin-left: 15%;
     margin-right: 15%;
     padding: 50px;
@@ -49,11 +49,11 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
 }
-.box h1{
+.ed-box h1{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-input[name='First name'],input[name='Last name']{
+input[name='firstname'],input[name='lastname']{
     width: 37.5%;
     padding: 5px 20px;
     margin: 8px 0;
@@ -63,7 +63,7 @@ input[name='First name'],input[name='Last name']{
     box-sizing: border-box;
     font-size: 15px;
 }
-input[name='Phone'],input[type=email],input[name='npwd'],input[name='opwd'],input[name='uname']{
+input[name='phone'],input[type=email],input[name='npwd'],input[name='opwd'],input[name='uname']{
     width: 75%;
     padding: 5px 20px;
     margin: 8px 0;

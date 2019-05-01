@@ -41,7 +41,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -215% !important">
                 <a class="dropdown-item" href="#"><?php echo($username) ?></a>
-                <a class="dropdown-item" href="#">Acount Setting</a>
+                <a class="dropdown-item" href="?page=edit">Acount Setting</a>
                 <?php if (!$role = "custome") :?>
                     <a class="dropdown-item" href="#">Shop Setting</a>
                 <?php endif ?>
