@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    background-image: url('src/img/background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    font-family: 'Kanit', sans-serif;
+}
+.bg-nav{
+    background-color: #333333;
+}
+.nav1 {
+    background-color: black;
+    overflow: hidden;
+    padding: 5px;
+}
+.nav1 a{
+    color: white;
+    font-size: 20px;
+    padding: 14px 16px;
+    margin-left: 5%;
+    text-decoration: none;
+    float: left; 
+}
+.nav1 .report{
+    float: right;
+    margin-right: 12.5%;
+}
+.nav2 {
+    background-color: crimson;
+    padding: 2.5px;
+    overflow: hidden;
+}
+.nav2 h1{
+    color: white;
+    padding: 14px 16px;
+    font-size: 30px;
+    margin-left: 17.5%;
+    text-decoration: none;
+    float: left; 
+}
+.box{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 50px;
+    text-align: center;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.box h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+input[name='First name'],input[name='Last name']{
+    width: 37.5%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+input[name='Phone'],input[type=email],input[name='npwd'],input[name='opwd'],input[name='uname']{
+    width: 75%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+label[for='fname']{
+    margin-right: 28%;
+    font-size: 20px;
+    color: grey;
+}
+label[for='lname']{
+    margin-right:28%;
+    font-size: 20px;
+    color: grey;
+}
+label[for='Phone']{
+    margin-right: 68.5%;
+    font-size: 20px;
+    color: grey;
+}
+label[for='email']{
+    font-size: 20px;
+    margin-right: 68.5%;
+    color:grey;
+}
+label[for='npwd']{
+    font-size: 20px;
+    margin-right: 60%;
+    color:grey;
+}
+label[for='opwd']{
+    font-size: 20px;
+    margin-right: 61%;
+    color:grey;
+}
+label[for='uname']{
+    font-size:20px;
+    margin-right: 65%;
+    color:grey;
+}
+input[type='submit']:hover {
+    opacity: 0.8;
+  }
+.center {
+    display: block;
+    margin-bottom: 35px;
+    margin-left: 7%;
+    width: 25%;
+    border-radius: 50%;
+}
+input[type='submit']{
+    margin-right: 65%;
+    opacity: 1;
+    background-color: #FE8160;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+input[type='submit']:hover {
+    opacity: 0.8;
+}
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    left: 27.5%;
+    top: 25%;
+    border-radius: 4px;
+    position: fixed;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 800px;
+    padding: 30px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+.form-container .btn {
+    margin-right: 65%;
+    opacity: 1;
+    background-color: #FE8160;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+textarea {
+    width: 740px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.form-container h1{
+    float: left;
+    margin-bottom: 20px;
+}
+.close{
+    float: right;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.form-container input[type='submit']{
+    margin-right: 65%;
+    background-color: #FE8160;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden;
+  }
