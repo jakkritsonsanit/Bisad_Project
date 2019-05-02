@@ -1,5 +1,9 @@
+*{
+    box-sizing: border-box;
+}
 body {
     margin: 0;
+    padding: 0;
     background-color: red;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -7,62 +11,11 @@ body {
     background-attachment: fixed;
     font-family: 'Kanit', sans-serif;
 }
-.boxleft{
-    padding: 50px;
-    background-color: purple;
-    float: left;
-    width: 45%;
-    max-height: 75%;
-    margin-left: 5%;
-    margin-top: 2%;
-    border-radius: 5px;
+.bg-nav{
+    background-color: #333333;
 }
-.pic1 {
-    float: left;
-    max-width: 150px;
-    width: 150px;
-    max-height: 150px;
-    height: 150px;
-    margin-left: 18px;
-    margin-right: 18px;
-    object-fit: cover;
-    margin-top: 25px;
-    border-radius: 3px;
-}
-.prev, .next{
-    font-size: 50px;
-    margin-top: 50px;
-    user-select: none;
-    -webkit-user-select: none;
-    font-weight: bold;
-    border-radius: 0 3px 3px 0;
-}
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-  
-  /* The expanding image container (positioning is needed to position the close button and the text) */
-.container {
-    position: relative;
-}
-.boxright{
-    width: 45%;
-    background-color: white;
-    float: left;
-    padding: 50px;
-    margin-top: 3.5%;
-}
-.shopinfonm{
-    margin-top: 10px;
-    margin-right: 63.5%;
-    font-size: 20px;
-    color: grey;
-}
-.shopinfoinput{
-    width: 85%;
+input[class='input1']{
+    width: 75%;
     padding: 3px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -74,8 +27,14 @@ body {
     background-color: #FE8160;
     color: white;
 }
-.inputphone{
-    width: 85%;
+label[for='shopnm1']{
+    margin-top: 5%;
+    margin-right: 64%;
+    font-size: 20px;
+    color: grey;
+}
+input[class='input2']{
+    width: 75%;
     padding: 3px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -87,61 +46,41 @@ body {
     background-color: #FE8160;
     color: white;
 }
-.container3{
-    width: 45%;
-    float: left;
-}
-.container3 img{
-    width: 100%;
-    margin-top: 5px;
-}
-.container2{
-    float: left;
-}
-.infoabtshop{
-    float: left;
-}
-.infoabtshoptxt{
-    float: left;
+label[for='abshop1']{
     margin-top: 10px;
     margin-right: 63.5%;
     font-size: 20px;
     color: grey;
 }
-#infoarea{
-    height: 350px;
-    width: 560px;
-    padding: 15px;
+/* Adjust color position of submit button */
+input[type='submit']{
+    margin-right: 64.5%;
+    opacity: 1;
+    background-color: #FE8160;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.txtar1 {
+    width: 800px;
+    padding: 12px;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: vertical;
+    margin-left: 4%;
     background-color: #FE8160;
     color: white;
 }
-.mySlides{
-    display: none;
+label[class='promo1']{
+    margin-top: 10px;
+    margin-right: 63.5%;
+    font-size: 20px;
+    color: grey;
 }
-.cursor {
-    cursor: pointer;
+.container12{
+    float: left;
 }
-.active, .pic1:hover {
-    opacity: 1;
-}
-.pic1 {
-    opacity: 0.6;
-}
-.pigbig{
-    max-height: 415px;
-    height: 415px;
-    width: 100%;
-    object-fit: cover;
-}
-.demo {
-    opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }

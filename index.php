@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- link css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="src/css/signin.css" />
     <link rel="stylesheet" href="src/css/mystyle.css">
     <link rel="stylesheet" type="text/css" href="src/css/register.css">
     <link rel="stylesheet" href="src/css/change.css">
@@ -47,6 +46,9 @@
             border-bottom: 0;
             border-left: .3em solid transparent;
         }
+        /* body{
+            background-image: url("src/img/background.jpg")
+        } */
     </style>
 </head>
 <body>

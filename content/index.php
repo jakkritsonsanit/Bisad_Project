@@ -10,15 +10,23 @@
     border-color: #f97754;
   }
 </style>
-
+<?php
+ if (isset($_GET['code'])) {
+   $_SESSION = $_GET['code'];
+   echo "<script>location.href='?page=books'</script>";
+ }
+?>
 <script>
   function books(code) {
     swal("Block ".concat(code), 'Do you want to rent ?', 'warning').then((value) => {
       swal('Success!!', '',  'success').then((value) => {
-        location.href="?page=books";
+        location.href="?page=books&code="+code;
       })
     });
-  }
+  };
+  function shop(code) {
+    location.href="?page=shopinfo&code="+code;
+  };
 </script>
 
 <body>
@@ -75,7 +83,7 @@
           if ($name == "EMPTY") {
             if (isset($role)) {
               if ($role == "merchant") { ?>
-                <button class="card-act emp-card" <?php echo($ml) ?> onclick="books('<?php echo($result['block_code']); $_SESSION['code'] = $result['block_code']?>');">
+                <button class="card-act emp-card" <?php echo($ml) ?> onclick="books('<?php echo($result['block_code'])?>');">
                   <div class="nav-code"><?php echo($result['block_code']) ?></div>
                   <div class="t-incard"><?php echo($name) ?></div>
                 </button>
@@ -95,7 +103,7 @@
             <?php }
           }
           else { ?>
-            <button class="card-act" <?php echo($ml) ?> >
+            <button class="card-act" <?php echo($ml) ?> onclick="shop('<?php echo($result['block_code'])?>');">
               <div class="nav-code"><?php echo($result['block_code']) ?></div>
               <div class="t-incard"><?php echo($name) ?></div>
             </button>

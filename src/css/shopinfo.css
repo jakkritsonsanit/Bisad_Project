@@ -1,9 +1,5 @@
-*{
-    box-sizing: border-box;
-}
 body {
     margin: 0;
-    padding: 0;
     background-color: red;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -11,76 +7,169 @@ body {
     background-attachment: fixed;
     font-family: 'Kanit', sans-serif;
 }
-.bg-nav{
-    background-color: #333333;
-}
-input[class='input1']{
-    width: 75%;
-    padding: 3px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+.boxbottom{
+    /* background-color: #4c4c4c; */
+    float: left;
+    height: 100vh;
+    margin-left: 5%;
     border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
 }
-label[for='shopnm1']{
-    margin-top: 5%;
-    margin-right: 64%;
-    font-size: 20px;
-    color: grey;
+.pic1 {
+    float: left;
+    max-width: 150px;
+    width: 150px;
+    max-height: 150px;
+    height: 150px;
+    margin-left: 18px;
+    margin-right: 18px;
+    object-fit: cover;
+    margin-top: 25px;
+    border-radius: 3px;
 }
-input[class='input2']{
-    width: 75%;
-    padding: 3px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
+.prev, .next{
+    font-size: 50px;
+    margin-top: 50px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: bold;
+    border-radius: 0 3px 3px 0;
 }
-label[for='abshop1']{
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+    position: relative;
+}
+.boxtop{
+    height: calc(100vh - 56px - 56.5px - 21.5px);
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 50px;
+    padding-top: 10px;
+}
+.shopinfonm{
+    width: 100%;
     margin-top: 10px;
     margin-right: 63.5%;
     font-size: 20px;
     color: grey;
 }
-/* Adjust color position of submit button */
-input[type='submit']{
-    margin-right: 64.5%;
-    opacity: 1;
+.shopinfoinput{
+    height: 36px;
+    width: 85%;
+    padding: 3px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
     background-color: #FE8160;
     color: white;
-    padding: 12px 20px;
-    margin-top: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
 }
-.txtar1 {
-    width: 800px;
-    padding: 12px;
+.inputphone{
+    height: 36px;
+    width: 85%;
+    padding: 3px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #FE8160;
+    color: white;
+}
+.inputinfo{
+    height: 160px;
+    width: 85%;
+    padding: 3px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #FE8160;
+    color: white;
+}
+.container3{
+    width: 50%;
+    float: left;
+}
+.container3 img{
+    width: 100%;
+    margin-top: 10px;
+}
+.container2{
+    width: 50%;
+    float: left;
+}
+.infoabtshop{
+    float: left;
+}
+.infoabtshoptxt{
+    float: left;
+    margin-top: 10px;
+    margin-right: 63.5%;
+    font-size: 20px;
+    color: grey;
+}
+#infoarea{
+    height: 350px;
+    width: 560px;
+    padding: 15px;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: vertical;
-    margin-left: 4%;
     background-color: #FE8160;
     color: white;
 }
-label[class='promo1']{
-    margin-top: 10px;
-    margin-right: 63.5%;
-    font-size: 20px;
-    color: grey;
+.mySlides{
+    display: none;
 }
-.container12{
-    float: left;
+.cursor {
+    cursor: pointer;
+    font-size: 4.5vh;
+}
+.active, .pic1:hover {
+    opacity: 1;
+}
+.pic1 {
+    opacity: 0.6;
+}
+.pigbig{
+    max-height: 415px;
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+}
+.demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+.code-name{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    border-bottom: solid #4c4c4c;
+    padding-bottom: 7.5px;
+}
+.columnlft{
+    width: 33.3%;
 }
