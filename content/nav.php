@@ -19,6 +19,9 @@
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="?page=shopinfo">Shopinfo</a>
+        </li>
         <?php if (isset($username)):?>
             <li class="nav-item">
                 <button class="nav-link" data-toggle="modal" data-target="#ReportModal" type="button">REPORT</button>
@@ -70,9 +73,9 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -215% !important">
                 <a class="dropdown-item" href="#"><?php echo($username) ?></a>
-                <a class="dropdown-item" href="#">Acount Setting</a>
+                <a class="dropdown-item" href="?page=edit">Account Setting</a>
                 <?php if ($role == "merchant") :?>
-                    <a class="dropdown-item" href="#">Shop Setting</a>
+                    <a class="dropdown-item" href="?page=shopedit">Shop Setting</a>
                 <?php endif ?>
                 <a class="dropdown-item" href="?page=logout">Log Out</a>
             </div>

@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: red;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    font-family: 'Kanit', sans-serif;
+}
+.bg-nav{
+    background-color: #333333;
+}
+input[class='input1']{
+    width: 75%;
+    padding: 3px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #FE8160;
+    color: white;
+}
+label[for='shopnm1']{
+    margin-top: 5%;
+    margin-right: 64%;
+    font-size: 20px;
+    color: grey;
+}
+input[class='input2']{
+    width: 75%;
+    padding: 3px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #FE8160;
+    color: white;
+}
+label[for='abshop1']{
+    margin-top: 10px;
+    margin-right: 63.5%;
+    font-size: 20px;
+    color: grey;
+}
+/* Adjust color position of submit button */
+input[type='submit']{
+    margin-right: 64.5%;
+    opacity: 1;
+    background-color: #FE8160;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.txtar1 {
+    width: 800px;
+    padding: 12px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    margin-left: 4%;
+    background-color: #FE8160;
+    color: white;
+}
+label[class='promo1']{
+    margin-top: 10px;
+    margin-right: 63.5%;
+    font-size: 20px;
+    color: grey;
+}
+.container12{
+    float: left;
+}

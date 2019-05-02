@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="src/css/signin.css" />
     <link rel="stylesheet" href="src/css/mystyle.css">
     <link rel="stylesheet" type="text/css" href="src/css/register.css">
+    <link rel="stylesheet" href="src/css/change.css">
+    <link rel="stylesheet" type="text/css" href="src/css/shopedit.css">
+    <link rel="stylesheet" href="src/css/shopinfo.css">
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -18,6 +21,9 @@
     <link rel="stylesheet" type="text/css" href="src/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="src/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="src/css/component.css" />
+
+    <!-- link sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 
@@ -72,17 +78,20 @@
                     break;
                 case 'register':
                     require_once 'content/register.php';
+                    break;              
+                case 'edit':
+                    require_once 'content/change.php';
                     break;
                
                 case 'books':
                     require_once 'content/books.php';
                     break;
-                // case 'gaygee':
-                //     require_once 'content/gaygee.php';
-                //     break;
-                // case 'jinda':
-                //     require_once 'content/jinda.php';
-                //     break;
+                case 'shopedit':
+                    require_once 'content/shopedit.php';
+                    break;
+                case 'shopinfo':
+                    require_once 'content/shopinfo.php';
+                    break;
                 // case 'upload':
                 //     require_once 'content/upload.php';
                 //     break;
