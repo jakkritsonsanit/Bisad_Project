@@ -42,7 +42,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -215% !important">
                 <a class="dropdown-item" href="#"><?php echo($username) ?></a>
                 <a class="dropdown-item" href="#">Acount Setting</a>
-                <?php if (!$role = "custome") :?>
+                <?php if ($role == "merchant") :?>
                     <a class="dropdown-item" href="#">Shop Setting</a>
                 <?php endif ?>
                 <a class="dropdown-item" href="?page=logout">Log Out</a>

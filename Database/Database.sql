@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 01, 2019 at 09:27 PM
+-- Generation Time: May 02, 2019 at 03:15 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -116,7 +116,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `phone`, `role`, `image`) VALUES
-(1, 'Group3', 'Bisad', 'manager', 'abc123456', 'group3@gmail.com', 9, 'manager', ''),
+(1, 'Group3', 'Bisad', 'manager', 'abc123456', 'group3@gmail.com', 9, 'manager', 'src/img/profile.jpg'),
 (2, 'จักรกฤษณ์', 'สอนสนิท', 'test', '0927830040', 'palm8ikaa2@gmail.com', 927830040, 'customer', ''),
 (3, 'จักรกฤษณ์', 'สอนสนิท', 'test_m', '123456', 'palm8ikaa2@gmail.com', 927830040, 'merchant', '');
 
@@ -186,7 +186,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

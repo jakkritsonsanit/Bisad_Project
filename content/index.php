@@ -42,6 +42,12 @@
   <!-- content -->
   <div class="con">
       <?php
+        if (isset($_SESSION['username'])) {
+          $username = $_SESSION['username'];
+          $query = mysqli_query($conn, "SELECT role FROM user WHERE username = '$username'") or die(mysqli_error($conn));
+          $result = mysqli_fetch_array($query);
+          $role = $result[0];
+        }
         $count = 1;
         $query = mysqli_query($conn, "select * from block");
         while($result = mysqli_fetch_assoc($query)) {
@@ -56,27 +62,44 @@
             $ml = "style='margin-left:0'";
           }
           if ($name == "EMPTY") {
-            $bg = "emp-card";
+            if (isset($role)) {
+              if ($role == "merchant") { ?>
+                <a href="#">
+                  <div class="card-act emp-card" <?php echo($ml) ?> >
+                    <div class="nav-code"><?php echo($result['block_code']) ?></div>
+                    <div class="t-incard"><?php echo($name) ?></div>
+                  </div>
+                </a>
+              <?php }
+              else { ?>
+                <div class="card-act emp-card" <?php echo($ml) ?> >
+                  <div class="nav-code"><?php echo($result['block_code']) ?></div>
+                  <div class="t-incard"><?php echo($name) ?></div>
+                </div>
+              <?php }
+            }
+            else { ?>
+              <div class="card-act emp-card" <?php echo($ml) ?> >
+                <div class="nav-code"><?php echo($result['block_code']) ?></div>
+                <div class="t-incard"><?php echo($name) ?></div>
+              </div>
+            <?php }
           }
-          else {
-            $bg = "";
-          }
-          ?>
-          <div class="card-act <?php echo($bg) ?>" <?php echo($ml) ?> >
-            <div class="nav-code"><?php echo($result['block_code']) ?></div>
-            <div class="t-incard"><?php echo($name) ?></div>
-          </div>
-        <?php 
-            $count++;
-          } 
+          else { ?>
+            <a href="#">
+              <div class="card-act" <?php echo($ml) ?> >
+                <div class="nav-code"><?php echo($result['block_code']) ?></div>
+                <div class="t-incard"><?php echo($name) ?></div>
+              </div>
+            </a>
+          <?php }
+          $count++;
+        } 
       ?>
+
       <!-- add block -->
       <?php
         if (isset($_SESSION['username'])) {
-          $username = $_SESSION['username'];
-          $query = mysqli_query($conn, "SELECT role FROM user WHERE username = '$username'") or die(mysqli_error($conn));
-          $result = mysqli_fetch_array($query);
-          $role = $result[0];
           if ($role == "manager") {
             if ($count % 2 == 1) {
               $ml = "";
@@ -118,6 +141,7 @@
           <?php }
         }
       ?>
+
       <script>
         $('#exampleModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
