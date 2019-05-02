@@ -21,10 +21,10 @@
       <ul class="navbar-nav ml-auto">
         <?php if (isset($username)):?>
             <li class="nav-item">
-                <button class="nav-link" data-toggle="modal" data-target="#exampleModal" type="button">REPORT</button>
+                <button class="nav-link" data-toggle="modal" data-target="#ReportModal" type="button">REPORT</button>
             </li>
         <?php endif ?>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
