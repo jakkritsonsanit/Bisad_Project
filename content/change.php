@@ -12,7 +12,7 @@
 ?>
 <body>
     <div class="nav2">
-        <h1>Steve Cartoon/Profile Setting</h1>
+        <?php echo '<h1>' . $firstname . ' ' . $lastname . ' / ' . 'Profile Setting' . '</h1>'  ?>
     </div>
     <div class="ed-box">
             <form method='post' enctype="multipart/form-data">
@@ -26,10 +26,10 @@
                 <input type="email" name="email" value="<?php echo($email) ?>" required><br>
                 <label for='uname'><b>Username</b></label><br>
                 <input type="text" name="uname" value="<?php echo($username) ?>" required><br>
-                <label for='npwd'><b>New Password</b></label><br>
-                <input type="password" name="npwd" required><br>
                 <label for='opwd'><b>Old Password</b></label><br>
                 <input type="password" name="opwd" required><br>
+                <label for='npwd'><b>New Password</b></label><br>
+                <input type="password" name="npwd" required><br>
                 <input type="submit">
             </form>
         </div>

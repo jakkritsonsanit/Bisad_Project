@@ -74,7 +74,7 @@ input[name='phone'],input[type=email],input[name='npwd'],input[name='opwd'],inpu
     font-size: 15px;
 }
 label[for='fname']{
-    margin-right: 28%;
+    margin-right: 29%;
     font-size: 20px;
     color: grey;
 }
@@ -95,12 +95,12 @@ label[for='email']{
 }
 label[for='npwd']{
     font-size: 20px;
-    margin-right: 60%;
+    margin-right: 60.5%;
     color:grey;
 }
 label[for='opwd']{
     font-size: 20px;
-    margin-right: 61%;
+    margin-right: 61.5%;
     color:grey;
 }
 label[for='uname']{
