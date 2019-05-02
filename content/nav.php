@@ -1,8 +1,9 @@
 <?php
     if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
-        $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+        $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'") or die(mysqli_error($conn));
         $result = mysqli_fetch_assoc($query);
+        $user_id = $result['user_id'];
         $role = $result['role'];
         $img = $result['image'];
     }
@@ -20,9 +21,37 @@
       <ul class="navbar-nav ml-auto">
         <?php if (isset($username)):?>
             <li class="nav-item">
-                <a class="nav-link" href="#">REPORT</a>
+                <button class="nav-link" data-toggle="modal" data-target="#exampleModal" type="button">REPORT</button>
             </li>
         <?php endif ?>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="exampleModalLabe">Report</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" id="reportform">
+                        <div class="report-box">
+                            <textarea placeholder="Write here" name="report"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="reportform" value="submit">Send message</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#myModal').on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus')
+            })
+        </script>
 
         <?php if (!isset($username)):?>
             <li class="nav-item">
@@ -52,3 +81,20 @@
       </ul>
     </div>
   </nav>
+
+    <script>
+            function success(){
+                swal('Success!!', 'Thank you for your report', 'success');
+            };
+    </script>
+
+  <!-- Send Report -->
+  <?php
+    if (isset($_POST['report'])) {
+        $report = $_POST['report'];
+        mysqli_query($conn, "INSERT INTO report (info, user_id) value ('$report', '$user_id')") or die(mysqli_error($conn));
+        echo '<script type="text/javascript">',
+            'success();',
+            '</script>'
+        ;
+    }

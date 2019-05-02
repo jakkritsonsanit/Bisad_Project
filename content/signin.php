@@ -52,7 +52,7 @@
 </body>
 
 <script>
-  function succes(){
+  function success(){
     swal('Success!!', 'You clicked the button!', 'success')
     .then((value) => {
       location.href='?page=home';
@@ -75,11 +75,25 @@
         $query = mysqli_query($conn, "select * from user where username='$username' and    password='$password'") or die(mysqli_error($conn));
         if ($result = mysqli_fetch_assoc($query)){
             $_SESSION['username'] = $result['username'];
-            echo '<script type="text/javascript">',
-              'succes();',
-              '</script>'
-            ;
-            // echo("<script>location.href='?page=home';</script>");
+            $query = mysqli_query($conn, "SELECT user_id, role FROM user WHERE username = '$username'") or die(mysqli_error($conn));
+            $result = mysqli_fetch_array($query);
+            $user_id = $result[0];
+            $role = $result[1];
+            if ($role == 'merchant'){
+              $query = mysqli_query($conn, "SELECT shop_id FROM shop WHERE user_id = '$user_id'") or die(mysqli_error($conn));
+              $result = mysqli_fetch_array($query);
+              $_SESSION['shop_id'] = $result[0];
+              echo '<script type="text/javascript">',
+                'success();',
+                '</script>'
+              ;
+            }
+            else {
+              echo '<script type="text/javascript">',
+                'success();',
+                '</script>'
+              ;
+            };
         }
         else {
           echo '<script type="text/javascript">',

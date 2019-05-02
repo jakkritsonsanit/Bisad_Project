@@ -10,6 +10,17 @@
     border-color: #f97754;
   }
 </style>
+
+<script>
+  function books(code) {
+    swal("Block ".concat(code), 'Do you want to rent ?', 'warning').then((value) => {
+      swal('Success!!', '',  'success').then((value) => {
+        location.href="?page=books";
+      })
+    });
+  }
+</script>
+
 <body>
   <!-- carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -64,12 +75,10 @@
           if ($name == "EMPTY") {
             if (isset($role)) {
               if ($role == "merchant") { ?>
-                <a href="#">
-                  <div class="card-act emp-card" <?php echo($ml) ?> >
-                    <div class="nav-code"><?php echo($result['block_code']) ?></div>
-                    <div class="t-incard"><?php echo($name) ?></div>
-                  </div>
-                </a>
+                <button class="card-act emp-card" <?php echo($ml) ?> onclick="books('<?php echo($result['block_code']); $_SESSION['code'] = $result['block_code']?>');">
+                  <div class="nav-code"><?php echo($result['block_code']) ?></div>
+                  <div class="t-incard"><?php echo($name) ?></div>
+                </button>
               <?php }
               else { ?>
                 <div class="card-act emp-card" <?php echo($ml) ?> >
@@ -86,12 +95,10 @@
             <?php }
           }
           else { ?>
-            <a href="#">
-              <div class="card-act" <?php echo($ml) ?> >
-                <div class="nav-code"><?php echo($result['block_code']) ?></div>
-                <div class="t-incard"><?php echo($name) ?></div>
-              </div>
-            </a>
+            <button class="card-act" <?php echo($ml) ?> >
+              <div class="nav-code"><?php echo($result['block_code']) ?></div>
+              <div class="t-incard"><?php echo($name) ?></div>
+            </button>
           <?php }
           $count++;
         } 

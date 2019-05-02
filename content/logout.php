@@ -1,4 +1,4 @@
 <?php
     session_destroy();
-    header('location:?');
+    echo "<script>location.href='?page=home'</script>";
 ?>

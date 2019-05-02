@@ -74,9 +74,9 @@
                     require_once 'content/register.php';
                     break;
                
-                // case 'gallery':
-                //     require_once 'content/gallery.php';
-                //     break;
+                case 'books':
+                    require_once 'content/books.php';
+                    break;
                 // case 'gaygee':
                 //     require_once 'content/gaygee.php';
                 //     break;
