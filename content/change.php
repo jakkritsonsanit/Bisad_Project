@@ -21,7 +21,7 @@
                 <input type="text" name="firstname" value="<?php echo($firstname) ?>" required>
                 <input type="text" name="lastname" value="<?php echo($lastname) ?>" required><br>
                 <label for="Phone"><b>Phone</b></label><br>
-                <input type="text" name="phone" value="<?php echo($phone) ?>" required><br>
+                <input type="text" name="phone" value="<?php echo('0'.$phone) ?>" required><br>
                 <label for="email"><b>E-mail</b></label><br>
                 <input type="email" name="email" value="<?php echo($email) ?>" required><br>
                 <label for='uname'><b>Username</b></label><br>
