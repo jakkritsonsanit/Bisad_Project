@@ -4,18 +4,15 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: red;
+    background-image: url('src/img/background.jpg')
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: right top;
     background-attachment: fixed;
     font-family: 'Kanit', sans-serif;
 }
-.bg-nav{
-    background-color: #333333;
-}
 input[class='input1']{
-    width: 75%;
+    width: 90%;
     padding: 3px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -26,34 +23,24 @@ input[class='input1']{
     margin-bottom: 20px;
     background-color: #FE8160;
     color: white;
+    margin-left: 5%;
 }
-label[for='shopnm1']{
+.shopnm15{
     margin-top: 5%;
-    margin-right: 64%;
+    margin-left: 5%;
     font-size: 20px;
     color: grey;
+    font-weight: bold;
 }
-input[class='input2']{
-    width: 75%;
-    padding: 3px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
-}
-label[for='abshop1']{
+.abshop15{
     margin-top: 10px;
-    margin-right: 63.5%;
+    margin-left: 5%;
     font-size: 20px;
     color: grey;
+    font-weight: bold;
 }
 /* Adjust color position of submit button */
-input[type='submit']{
+.submitinfo{
     margin-right: 64.5%;
     opacity: 1;
     background-color: #FE8160;
@@ -63,24 +50,50 @@ input[type='submit']{
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    margin-left: 5%;
 }
 .txtar1 {
-    width: 800px;
+    width: 90%;
     padding: 12px;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: vertical;
-    margin-left: 4%;
+    margin-left: 5%;
     background-color: #FE8160;
     color: white;
 }
-label[class='promo1']{
+.promo1{
     margin-top: 10px;
-    margin-right: 63.5%;
+    margin-left: 5%;
     font-size: 20px;
     color: grey;
 }
 .container12{
     float: left;
+}
+.boxedit{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: yellow;
+    padding: 25px;
+    border-radius: 5px;
+}
+.center1{
+    border-radius: 50%;
+    max-width: 250px;
+    width: 250px;
+    height: 225px;
+    max-height: 225px;
+    object-fit: cover;
+    margin-left: 300px;
+}
+.arr{
+    max-width: 25%;
+    max-height: 25%;
+    height: 150px;
+    margin-left: 5%;
+    float: left;
+    object-fit: cover;
 }
