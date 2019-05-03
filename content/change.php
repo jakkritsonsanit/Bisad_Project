@@ -21,16 +21,16 @@
                 <input type="text" name="firstname" class="change-input-1" value="<?php echo($firstname) ?>" required>
                 <input type="text" name="lastname" class="change-input-1" value="<?php echo($lastname) ?>" required><br>
                 <label for="Phone"><b>Phone</b></label><br>
-                <input type="text" name="phone" class="change-input-2" value="<?php echo('0'.$phone) ?>" required><br>
+                <input type="text" name="phone" class="change-input-2" value="<?php echo($phone) ?>" required><br>
                 <label for="email"><b>E-mail</b></label><br>
                 <input type="email" name="email" class="change-input-2" value="<?php echo($email) ?>" required><br>
                 <label for='uname'><b>Username</b></label><br>
                 <input type="text" name="uname" class="change-input-2" value="<?php echo($username) ?>" required><br>
                 <label for='opwd'><b>Old Password</b></label><br>
-                <input type="password" name="opwd" required><br>
+                <input type="password" name="opwd" class="change-input-2" required><br>
                 <label for='npwd'><b>New Password</b></label><br>
-                <input type="password" name="npwd" required><br>
-                <input type="submit">
+                <input type="password" name="npwd" class="change-input-2" required><br>
+                <input type="submit" value="Update">
             </form>
         </div>
         <script>

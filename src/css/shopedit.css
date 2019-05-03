@@ -65,15 +65,14 @@ input[type='submit']{
     border-radius: 4px;
 }
 .txtar1 {
-    width: 800px;
-    padding: 12px;
-    font-size: 20px;
+    width: 75%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
-    resize: vertical;
-    margin-left: 4%;
-    background-color: #FE8160;
-    color: white;
+    box-sizing: border-box;
+    font-size: 15px;
 }
 label[class='promo1']{
     margin-top: 10px;

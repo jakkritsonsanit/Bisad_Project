@@ -62,15 +62,17 @@
 	<div class="container-top-shopinfo">
 		<div class="code-name"><h2><?php echo "$code" ?></h2></div>
 		<?php
-			if ($shop_id == $user_shopid) { ?>
-				<div class="delete-shop-div">
-					<button class="delete-shop-btn" type="button" onclick="delete_shop()">
-						<span>
-							Delete Shop
-						</span>
-					</button>
-				</div>
-			<?php }
+			if (isset($user_shopid)) {
+				if ($shop_id == $user_shopid) { ?>
+					<div class="delete-shop-div">
+						<button class="delete-shop-btn" type="button" onclick="delete_shop()">
+							<span>
+								Delete Shop
+							</span>
+						</button>
+					</div>
+				<?php }
+			}
 		?>
 	</div>
 	<div class=boxtop>
