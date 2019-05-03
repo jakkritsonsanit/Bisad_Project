@@ -18,14 +18,14 @@
             <form method='post' enctype="multipart/form-data">
                 <img src="manu.png" alt="" class='center'>
                 <label for="fname"><b>Firstname</b></label><label for='lname'><b>Lastname</b></label><br>
-                <input type="text" name="firstname" value="<?php echo($firstname) ?>" required>
-                <input type="text" name="lastname" value="<?php echo($lastname) ?>" required><br>
+                <input type="text" name="firstname" class="change-input-1" value="<?php echo($firstname) ?>" required>
+                <input type="text" name="lastname" class="change-input-1" value="<?php echo($lastname) ?>" required><br>
                 <label for="Phone"><b>Phone</b></label><br>
-                <input type="text" name="phone" value="<?php echo('0'.$phone) ?>" required><br>
+                <input type="text" name="phone" class="change-input-2" value="<?php echo('0'.$phone) ?>" required><br>
                 <label for="email"><b>E-mail</b></label><br>
-                <input type="email" name="email" value="<?php echo($email) ?>" required><br>
+                <input type="email" name="email" class="change-input-2" value="<?php echo($email) ?>" required><br>
                 <label for='uname'><b>Username</b></label><br>
-                <input type="text" name="uname" value="<?php echo($username) ?>" required><br>
+                <input type="text" name="uname" class="change-input-2" value="<?php echo($username) ?>" required><br>
                 <label for='opwd'><b>Old Password</b></label><br>
                 <input type="password" name="opwd" required><br>
                 <label for='npwd'><b>New Password</b></label><br>

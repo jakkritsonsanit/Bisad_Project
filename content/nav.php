@@ -19,9 +19,6 @@
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="?page=shopinfo">Shopinfo</a>
-        </li>
         <?php if (isset($username)):?>
             <li class="nav-item">
                 <button class="nav-link" data-toggle="modal" data-target="#ReportModal" type="button">REPORT</button>

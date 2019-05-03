@@ -18,10 +18,22 @@
 ?>
 <script>
   function books(code) {
-    swal("Block ".concat(code), 'Do you want to rent ?', 'warning').then((value) => {
-      swal('Success!!', '',  'success').then((value) => {
-        location.href="?page=books&code="+code;
-      })
+    swal("Block ".concat(code), 'Do you want to rent ?', 'warning',{
+      buttons: {
+        cancel: true,
+        yes: "Yes"
+      },
+    }).then((value) => {
+      switch (value) {
+        case "yes":
+          swal('Success!!', '',  'success').then((value) => {
+              location.href="?page=books&code="+code;
+          }) 
+          break;
+        default:
+          location.href="?page=home";
+          break;
+      }
     });
   };
   function shop(code) {
@@ -202,4 +214,12 @@
 			;
     }
   }
+  $_SESSION['previous'] = basename($_SERVER['PHP_SELF']);
+  if (isset($_SESSION['previous'])) {
+   if (basename($_SERVER['PHP_SELF']) != $_SESSION['previous']) {
+        session_destroy();
+        ### or alternatively, you can use this for specific variables:
+        ### unset($_SESSION['varname']);
+   }
+}
 ?>

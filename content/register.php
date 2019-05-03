@@ -69,7 +69,7 @@
 	function invalid(){
     swal('Opps!', 'Username is taken', 'warning')
     .then((value) => {
-      location.href='?page=signin';
+      location.href='?page=signup';
     });
   };
 </script>
@@ -85,20 +85,25 @@
 			;
     }
     else {
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $role = $_POST['role'];
-        $imagename = 'src/img/'.date('Y-m-d-h-s'). '-'. $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], $imagename);
-        mysqli_query($conn, "insert into user (firstname, lastname, username, password, email, phone, role, image) values ('$firstname','$lastname','$username','$password','$email','$phone','$role','$imagename')") or die(mysqli_error($conn));
-        $_SESSION['username'] = $username;
-        echo '<script type="text/javascript">',
-					'success();',
-					'</script>'
-				;
+			$firstname = $_POST['firstname'];
+			$lastname = $_POST['lastname'];
+			$password = $_POST['password'];
+			$email = $_POST['email'];
+			$phone = $_POST['phone'];
+			$role = $_POST['role'];
+			$imagename = 'src/img/'.date('Y-m-d-h-s'). '-'. $_FILES['image']['name'];
+			move_uploaded_file($_FILES['image']['tmp_name'], $imagename);
+			mysqli_query($conn, "insert into user (firstname, lastname, username, password, email, phone, role, image) values ('$firstname','$lastname','$username','$password','$email','$phone','$role','$imagename')") or die(mysqli_error($conn));
+			$_SESSION['username'] = $username;
+			if ($role == "merchant") {
+				echo "<script>location.href='?page=create_shop';</script>";
+			}
+			else {
+				echo '<script type="text/javascript">',
+				'success();',
+				'</script>'
+			;
+			}
     }
   }
 ?>

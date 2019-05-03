@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="src/css/change.css">
     <link rel="stylesheet" type="text/css" href="src/css/shopedit.css">
     <link rel="stylesheet" href="src/css/shopinfo.css">
+    <link rel="stylesheet" type="text/css" href="src/css/create_shop.css">
 
     <!-- link font -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -94,12 +95,12 @@
                 case 'shopinfo':
                     require_once 'content/shopinfo.php';
                     break;
-                // case 'upload':
-                //     require_once 'content/upload.php';
-                //     break;
-                // case 'v-condo':
-                //     require_once 'content/v-condo.php';
-                //     break;
+                case 'create_shop':
+                    require_once 'content/create_shop.php';
+                    break;
+                case 'delete':
+                    require_once 'content/delete.php';
+                    break;
                 default:
                     require_once 'content/index.php';
                 break;

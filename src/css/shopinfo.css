@@ -71,8 +71,8 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
+    background-color: #f2f2f2;
+    color: black;
 }
 .inputphone{
     height: 36px;
@@ -85,13 +85,13 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
+    background-color: #f2f2f2;
+    color: black;
 }
 .inputinfo{
     height: 160px;
     width: 85%;
-    padding: 3px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -99,16 +99,23 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     margin-bottom: 20px;
-    background-color: #FE8160;
-    color: white;
+    background-color: #f2f2f2;
+    color: black;
 }
 .container3{
+    background-color: #e5e5e5;
+    height: 100%;
+    padding: 10px;
     width: 50%;
     float: left;
+    line-height: 100%;
+    vertical-align: middle;
 }
 .container3 img{
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    height: -webkit-fill-available;
+    object-fit: scale-down;
 }
 .container2{
     width: 50%;
@@ -163,13 +170,55 @@ body {
     opacity: 1;
   }
 
-.code-name{
+.container-top-shopinfo{
+    width: 100%;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 25px;
+    margin-top: 20px;
     border-bottom: solid #4c4c4c;
     padding-bottom: 7.5px;
+    height: 60.5px;
 }
 .columnlft{
     width: 33.3%;
+}
+.delete-shop-div{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 10%;
+    margin-left: 82%;
+}
+.delete-shop-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #FE4056;
+    border-radius: 25px;
+
+    font-family: 'kanit', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.code-name{
+    float: left;
+    width: 50%;
+    margin-block-end: 0;
 }

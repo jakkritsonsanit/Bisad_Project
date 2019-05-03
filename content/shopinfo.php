@@ -34,6 +34,9 @@
 	}
 </style>
 <?php
+	if (isset($_SESSION['shop_id'])) {
+		$user_shopid = $_SESSION['shop_id'];
+	}
 	$promo_img = [];
 	$code = $_GET['code'];
 	$query = mysqli_query($conn, "SELECT shop_id FROM block WHERE block_code = '$code' ") or die(mysqli_error($conn));
@@ -49,9 +52,26 @@
 	};
 	// echo "<script>alert('$promo')</script>";
 ?>
+
+<script>
+	function delete_shop() {
+		location.href="?page=delete&code="+'<?php echo $code ?>';
+	}
+</script>
 <body>
-	<div class="code-name">
-		<h2><?php echo "$code" ?></h2>
+	<div class="container-top-shopinfo">
+		<div class="code-name"><h2><?php echo "$code" ?></h2></div>
+		<?php
+			if ($shop_id == $user_shopid) { ?>
+				<div class="delete-shop-div">
+					<button class="delete-shop-btn" type="button" onclick="delete_shop()">
+						<span>
+							Delete Shop
+						</span>
+					</button>
+				</div>
+			<?php }
+		?>
 	</div>
 	<div class=boxtop>
 		<div class="container2">
@@ -63,51 +83,55 @@
 			<div class='inputinfo'><?php echo $shop['info'] ?></div>
 		</div>
 		<div class="container3">
-			<img src="src/img/profile.jpg" alt="">
+			<img src="<?php echo $shop['img'] ?>" alt="">
 		</div>
 		<div class="infoabtshop">
 			
 		</div>
 	</div>
-	<div class="boxbottom">
-		<div class="container my-4">
-			<!--Carousel Wrapper-->
-			<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
-				<!--Slides-->
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-					<img class="d-block w-100" src="<?php echo $promo_img[0] ?>" alt="First slide">
+	<?php 
+		if (isset($promo_img[0])) { ?>
+			<div class="boxbottom">
+				<div class="container my-4">
+					<!--Carousel Wrapper-->
+					<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+						<!--Slides-->
+						<div class="carousel-inner" role="listbox">
+							<div class="carousel-item active">
+							<img class="d-block w-100" src="<?php echo $promo_img[0] ?>" alt="First slide">
+							</div>
+							<div class="carousel-item">
+							<img class="d-block w-100" src="<?php echo $promo_img[1] ?>" alt="Second slide">
+							</div>
+							<div class="carousel-item">
+							<img class="d-block w-100" src="<?php echo $promo_img[2] ?>" alt="Third slide">
+							</div>
+						</div>
+						<!--/.Slides-->
+						<!--Controls-->
+						<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+						<!--/.Controls-->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block w-100" src="<?php echo $promo_img[0] ?>"
+								class="img-fluid"></li>
+							<li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100" src="<?php echo $promo_img[1] ?>"
+								class="img-fluid"></li>
+							<li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100" src="<?php echo $promo_img[2] ?>"
+								class="img-fluid"></li>
+						</ol>
 					</div>
-					<div class="carousel-item">
-					<img class="d-block w-100" src="<?php echo $promo_img[1] ?>" alt="Second slide">
-					</div>
-					<div class="carousel-item">
-					<img class="d-block w-100" src="<?php echo $promo_img[2] ?>" alt="Third slide">
-					</div>
+					<!--/.Carousel Wrapper-->
 				</div>
-				<!--/.Slides-->
-				<!--Controls-->
-				<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-				<!--/.Controls-->
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block w-100" src="<?php echo $promo_img[0] ?>"
-						class="img-fluid"></li>
-					<li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100" src="<?php echo $promo_img[1] ?>"
-						class="img-fluid"></li>
-					<li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100" src="<?php echo $promo_img[2] ?>"
-						class="img-fluid"></li>
-				</ol>
 			</div>
-			<!--/.Carousel Wrapper-->
-		</div>
-	</div>
+		<?php };
+	?>
 	<script>
 		var slideIndex = 1;
 		showSlides(slideIndex);

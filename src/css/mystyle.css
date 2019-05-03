@@ -36,6 +36,7 @@
     min-height: -webkit-fill-available;
 }
 .t-incard{
+    text-align: center;
     width: 100%;
     color: black;
     font-size: 15px;
@@ -118,3 +119,4 @@
     height: 25vh;
     
 }
+
