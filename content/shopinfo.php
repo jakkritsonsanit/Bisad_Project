@@ -2,15 +2,19 @@
 	if (isset($_SESSION['shop_id'])) {
 		$user_shopid = $_SESSION['shop_id'];
 	}
+	if (isset($_SESSION['username'])) {
+		$username = $_SESSION['username'];
+		$quey_role = mysqli_query($conn, "SELECT role FROM user WHERE username = '$username'") or die(mysqli_error($conn));
+		$user_role = mysqli_fetch_array($quey_role)[0];
+	}
 	$code = $_GET['code'];
 	$query = mysqli_query($conn, "SELECT shop_id FROM block WHERE block_code = '$code' ") or die(mysqli_error($conn));
 	$shop_id = mysqli_fetch_array($query)[0];
 	$query_shop = mysqli_query($conn, "SELECT * FROM shop WHERE shop_id = '$shop_id' ") or die(mysqli_error($conn));
 	$shop = mysqli_fetch_assoc($query_shop);
 	$user_id = $shop['user_id'];
-	$query_phone = mysqli_query($conn, "SELECT * FROM user WHERE user_id = '$user_id' ") or die(mysqli_error($conn));
-	$phone = mysqli_fetch_assoc($query_phone)['phone'];
-	$user_role = mysqli_fetch_assoc($query_phone)['role'];
+	$query_user_shop = mysqli_query($conn, "SELECT * FROM user WHERE user_id = '$user_id' ") or die(mysqli_error($conn));
+	$shop_phone = mysqli_fetch_assoc($query_user_shop)['phone'];
 	$query_promo = mysqli_query($conn, "SELECT * FROM promotion WHERE shop_id = '$shop_id' ") or die(mysqli_error($conn));
 ?>
 <style>
@@ -47,8 +51,23 @@
 	<div class="container-top-shopinfo">
 		<div class="code-name"><h2><?php echo "$code" ?></h2></div>
 		<?php
+			if (isset($user_role)) {
+				if ($user_role == 'manager') { 
+					$de_promo = 'delete_promo';
+					?>
+					<div class="delete-shop-div">
+						<button class="delete-shop-btn" type="button" onclick="delete_shop()">
+							<span>
+								Delete Shop
+							</span>
+						</button>
+					</div>
+				<?php }
+			}
 			if (isset($user_shopid)) {
-				if ($shop_id == $user_shopid or $user_role == 'manager') { ?>
+				if ($shop_id == $user_shopid) { 
+					$de_promo = 'delete_promo';
+					?>
 					<div class="delete-shop-div">
 						<button class="delete-shop-btn" type="button" onclick="delete_shop()">
 							<span>
@@ -68,7 +87,7 @@
 			<label for="shopnm" class='shopinfonm'><b>Shop Name</b></label><br>
 			<div class='shopinfoinput'><?php echo $shop['name'] ?></div><br>
 			<label for="Phone" class='shopinfophn'><b>Phone</b></label><br>
-			<div class='inputphone'><?php echo $phone ?></div><br>
+			<div class='inputphone'><?php echo $shop_phone ?></div><br>
 			<label class="infoabtshoptxt"><b>About Shop</b></label><br>
 			<div class='inputinfo'><?php echo $shop['info'] ?></div>
 		</div>
@@ -76,7 +95,7 @@
 			<label for="shopnm" class='promo-title'><b>Promotion</b></label><br>
 			<?php
 			while ($promo = mysqli_fetch_assoc($query_promo)) { ?>
-				<div class="pic-promo" onclick="delete_promo('<?php echo $promo['promo_id'] ?>')">
+				<div class="pic-promo" onclick="<?php echo $de_promo ?>('<?php echo $promo['promo_id'] ?>')">
 					<img src="<?php echo $promo['img'] ?>" class="d-block w-100" alt="...">
 				</div>
 			<?php }
