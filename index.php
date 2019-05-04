@@ -25,6 +25,8 @@
     <!-- link sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script src="src/js/profile.js"></script>
+
     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 
     <!-- link sweetalert -->
@@ -100,6 +102,12 @@
                     break;
                 case 'delete':
                     require_once 'content/delete.php';
+                    break;
+                case 'delete_promo':
+                    require_once 'content/delete_promo.php';
+                    break;
+                case 'checkreport';
+                    require_once 'content/result_report.php';
                     break;
                 default:
                     require_once 'content/index.php';

@@ -8,7 +8,13 @@
 		$img = $result['image'];
 	}
 ?>
-
+<style>
+	.btn-primary {
+		color: #fff;
+		background-color: #FE8160;
+		border-color: #FE8160;
+	}
+</style>
 <!-- Nav -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
 	<a class="navbar-brand" href="?page=home" style="margin-left:50px">Home</a>
@@ -20,11 +26,17 @@
 	<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		<ul class="navbar-nav ml-auto">
 			<?php 
-				if (isset($username)):?>
+				if (isset($username)) {
+					if ($role == 'manager') { ?>
+						<li class="nav-item">
+							<a class="nav-link" href="?page=checkreport">Check Report</a>
+						</li>
+					<?php } else { ?>
 					<li class="nav-item">
-					<button class="nav-link" data-toggle="modal" data-target="#ReportModal" type="button">REPORT</button>
+						<button class="nav-link" data-toggle="modal" data-target="#ReportModal" type="button">REPORT</button>
 					</li>
-				<?php endif
+					<?php }
+				}
 			?>
 
 			<!-- Modal -->

@@ -95,7 +95,7 @@
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 10%;
+    width: 12.5vw;
     height: 50%;
     word-wrap: break-word;
     background-color: white;
@@ -103,7 +103,7 @@
     float: left;
     border: solid black 1px;
     height: 90px;
-    margin-left: 10%;
+    margin-left: 5.5%;
     overflow: scroll;
 }
 .add-icon {

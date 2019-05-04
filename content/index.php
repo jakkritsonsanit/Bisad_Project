@@ -18,8 +18,8 @@
 }
 ?>
 <script>
-	function books(code) {
-		swal("Block ".concat(code), 'Do you want to rent ?', 'warning', {
+	function books(code, price) {
+		swal("Block ".concat(code), 'Price : ' + price + '\n Do you want to rent ?', 'warning', {
 			buttons: {
 				cancel: true,
 				yes: "Yes"
@@ -32,7 +32,6 @@
 					})
 					break;
 				default:
-					location.href = "?page=home";
 					break;
 			}
 		});
@@ -96,7 +95,7 @@
 				if ($name == "EMPTY") {
 					if (isset($role)) {
 						if ($role == "merchant") { ?>
-							<div class="card-act emp-card" <?php echo ($ml) ?> onclick="books('<?php echo ($result['block_code']) ?>');">
+							<div class="card-act emp-card" <?php echo ($ml) ?> onclick="books('<?php echo $result['block_code']?>','<?php echo $result['price'] ?>');">
 								<div class="nav-code"><span><?php echo ($result['block_code']) ?></span></div>
 								<div class="t-incard"><span><?php echo ($name) ?></span></div>
 							</div>

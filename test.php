@@ -1,22 +1,28 @@
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<head>
+    <script src="src/js/profile.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/profile.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-<form method="POST" enctype="multipart/form-data">
-    <input type="file" accept="image/*" name="image"  required/>
-    <input type="submit">
-</form>
+</head>
 
-<button id="button-a">test</button>
-
-<script>
-    $('#button-a').click(function(){
-        swal('Good job!', 'You clicked the button!', 'success');
-    })
-</script>
-
-<?php
-    if (isset($_FILES['image'])) {
-        $imagename = 'src/img/'.date('Y-m-d-h-s'). '-'. $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], $imagename);
-    }
-?>
+<div class="table">
+  <div class="table-cell">
+    <div class="modal">
+      <div id="profile">
+        <div class="dashes"></div>
+        <label>Click to browse or drag an image here</label></div>
+      <div class="editable"><i class="fa fa-pencil"></i><h1 contenteditable>Drew Vosburg</h1></div>
+      <div class="stat">
+        <div class="label">Shots</div>
+        <div class="num">40</div>
+      </div>
+      <div class="stat">
+        <div class="label">Projects</div>
+        <div class="num">1</div>
+      </div>
+      <button>Done Editing</button>
+    </div>
+  </div>
+</div>
+<input type="file" id="mediaFile" />

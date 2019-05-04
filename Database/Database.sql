@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2019 at 09:05 PM
+-- Generation Time: May 04, 2019 at 09:43 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -41,10 +41,10 @@ CREATE TABLE `block` (
 
 INSERT INTO `block` (`block_id`, `block_code`, `shop_id`, `price`) VALUES
 (1, 'A1', 1, 250),
-(2, 'A2', 1, 250),
+(2, 'A2', 6, 250),
 (3, 'B1', 2, 250),
-(4, 'B2', 1, 250),
-(5, 'C1', 1, 250),
+(4, 'B2', 2, 250),
+(5, 'C1', 2, 250),
 (6, 'C2', 1, 250),
 (7, 'A3', 1, 250),
 (8, 'A4', 1, 250),
@@ -53,7 +53,11 @@ INSERT INTO `block` (`block_id`, `block_code`, `shop_id`, `price`) VALUES
 (11, 'C3', 1, 10),
 (12, 'C4', 1, 250),
 (13, 'A5', 1, 250),
-(14, 'A6', 1, 250);
+(14, 'A6', 6, 250),
+(15, 'B5', 1, 250),
+(16, 'B6', 1, 250),
+(17, 'C5', 1, 250),
+(18, 'c6', 1, 250);
 
 -- --------------------------------------------------------
 
@@ -74,7 +78,10 @@ CREATE TABLE `promotion` (
 INSERT INTO `promotion` (`promo_id`, `shop_id`, `img`) VALUES
 (1, 2, 'src/img/PM1.png'),
 (2, 2, 'src/img/PM2.png'),
-(3, 2, 'src/img/PM3.png');
+(3, 2, 'src/img/PM3.png'),
+(4, 6, 'src/img/PM1.png'),
+(5, 6, 'src/img/PM2.png'),
+(6, 6, 'src/img/PM3.png');
 
 -- --------------------------------------------------------
 
@@ -94,32 +101,9 @@ CREATE TABLE `report` (
 
 INSERT INTO `report` (`report_id`, `info`, `user_id`) VALUES
 (1, 'LnW toon right here!', 1),
-(6, 's', 1),
-(7, 'sa', 1),
-(8, 'sa', 1),
-(9, 'sa', 1),
-(10, 'sa', 1),
-(11, 'sa', 1),
-(12, 'sa', 1),
-(13, 'sa', 1),
-(14, 'sa', 1),
-(15, 'sa', 1),
-(16, 'sa', 1),
-(17, 'sa', 1),
-(18, 'sa', 1),
-(19, 'sa', 1),
-(20, 'sa', 1),
-(21, 'sa', 1),
-(22, 'sa', 1),
-(23, 'sa', 1),
-(24, 'sa', 1),
-(25, 'sa', 1),
-(26, 'sa', 1),
-(27, 'sa', 1),
-(28, 'sa', 1),
-(29, 'sa', 1),
 (30, 'sa', 1),
-(31, 'as', 1);
+(31, 'as', 1),
+(32, 'ต่อให้รักเทอเท่าฟ้า แต่คนหมาๆยังได้ใจเทอไป', 3);
 
 -- --------------------------------------------------------
 
@@ -131,16 +115,18 @@ CREATE TABLE `shop` (
   `shop_id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `info` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `info` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `shop`
 --
 
-INSERT INTO `shop` (`shop_id`, `user_id`, `name`, `info`) VALUES
-(1, 1, 'EMPTY', 'none'),
-(2, 3, 'คอหมูย่างเมืองคอน', 'คอหมูย่างเนื้อนุ่มหมักจากน้ำป้าเชง');
+INSERT INTO `shop` (`shop_id`, `user_id`, `name`, `info`, `img`) VALUES
+(1, 1, 'EMPTY', 'none', ''),
+(2, 3, 'คอหมูย่างเมืองคอน', 'คอหมูย่างเนื้อนุ่มหมักจากน้ำป้าเชง', 'src/img/2019-05-04-07-44-S__12247092.jpg'),
+(6, 6, 'ครัวบักเขต', 'ครัวหนุ่มอิสลามผู้มากฝันในวงการอาหาร ใฝ่ฝันเติบโตขึ้นไปเป็นใหญ่', 'src/img/2019-05-03-12-4520160913_101451.jpg');
 
 -- --------------------------------------------------------
 
@@ -155,7 +141,7 @@ CREATE TABLE `user` (
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -165,9 +151,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `phone`, `role`, `image`) VALUES
-(1, 'Group3', 'Bisad', 'manager', 'abc123456', 'group3@gmail.com', 9, 'manager', 'src/img/profile.jpg'),
-(2, 'จักรกฤษณ์', 'สอนสนิท', 'test', '0927830040', 'palm8ikaa2@gmail.com', 927830040, 'customer', ''),
-(3, 'จักรกฤษณ์', 'สอนสนิท', 'test_m', '123456', 'palm8ikaa2@gmail.com', 927830040, 'merchant', '');
+(1, 'Group3', 'Bisad', 'manager', 'abc123456', 'group3@gmail.com', '9', 'manager', 'src/img/profile.jpg'),
+(2, 'จักรกฤษณ์', 'สอนสนิท', 'test', '0927830040', 'palm8ikaa2@gmail.com', '0927830040', 'customer', ''),
+(3, 'จักรกฤษณ์', 'สอนสนิท', 'test_m', '123456', 'palm8ikaa2@gmail.com', '0927830040', 'merchant', 'src/img/2019-05-04-06-13-test.jpg'),
+(6, 'จักรกฤษณ์', 'sonsanit', 'palm8ikaa2', '1234', 'palm8ikaa2@gmail.com', '927830040', 'merchant', 'src/img/2019-05-03-12-52-23509185_10210731055334146_2241253386649832692_o.jpg');
 
 --
 -- Indexes for dumped tables
@@ -211,31 +198,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `block`
 --
 ALTER TABLE `block`
-  MODIFY `block_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `block_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `promotion`
 --
 ALTER TABLE `promotion`
-  MODIFY `promo_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `promo_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `shop_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `shop_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
