@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    background-image: url('src/img/background.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: right top;
@@ -41,13 +40,17 @@ body {
     float: left; 
 }
 .ed-box{
+    width: 70%;
     border-left: solid #707070 1px;
     border-right: solid #707070 1px;
     border-bottom: solid #707070 1px;
     margin-left: 15%;
     margin-right: 15%;
-    padding: 50px;
-    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: left;
     background-color: #ffffff;
     box-sizing: border-box;
     border-radius: 0px 0px 5px 5px;
@@ -57,7 +60,7 @@ body {
     padding-bottom: 10px;
 }
 .change-input-1 {
-    width: 37.5%;
+    width: 49.4%;
     padding: 5px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -68,7 +71,7 @@ body {
 }
 
 .change-input-2{
-    width: 75%;
+    width: 100%;
     padding: 5px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -88,28 +91,28 @@ label[for='lname']{
     color: grey;
 }
 label[for='Phone']{
-    margin-right: 68.5%;
+    padding-top: 11px;
     font-size: 20px;
     color: grey;
 }
 label[for='email']{
+    padding-top: 11px;
     font-size: 20px;
-    margin-right: 68.5%;
     color:grey;
 }
 label[for='npwd']{
+    padding-top: 11px;
     font-size: 20px;
-    margin-right: 60.5%;
     color:grey;
 }
 label[for='opwd']{
+    padding-top: 11px;
     font-size: 20px;
-    margin-right: 61.5%;
     color:grey;
 }
 label[for='uname']{
+    padding-top: 11px;
     font-size:20px;
-    margin-right: 65%;
     color:grey;
 }
 input[type='submit']:hover {

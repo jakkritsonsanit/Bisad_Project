@@ -65,7 +65,7 @@ input[type='submit']{
     border-radius: 4px;
 }
 .txtar1 {
-    width: 75%;
+    width: 100%;
     padding: 5px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -82,4 +82,35 @@ label[class='promo1']{
 }
 .container12{
     float: left;
+}
+.shope-promo {
+    width: 100%;
+    height: 210px;
+}
+.arr{
+    margin-left: 1%;
+    float: left;
+    height: 28%;
+    width: 32%;
+    object-fit: cover;
+}
+.ed-box-edit{
+    width: 80%;
+    border-left: solid #707070 1px;
+    border-right: solid #707070 1px;
+    border-bottom: solid #707070 1px;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 0px 0px 5px 5px;
+}
+.ed-box-edit h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
