@@ -10,6 +10,11 @@
 		background-color: #f97754;
 		border-color: #f97754;
 	}
+	.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+		color: #fff;
+		background-color: #f97754;
+		border-color: #f97754;
+	}
 </style>
 <?php
 	if (isset($_GET['code'])) {

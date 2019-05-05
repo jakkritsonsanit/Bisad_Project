@@ -111,7 +111,9 @@
 <?php
 	if (isset($_POST['report'])) {
 		$report = $_POST['report'];
-		mysqli_query($conn, "INSERT INTO report (info, user_id) value ('$report', '$user_id')") or die(mysqli_error($conn));
+		$date = date("Y-m-d");
+		$time = date("h:m:s");
+		mysqli_query($conn, "INSERT INTO report (info, user_id, date, time) value ('$report', '$user_id', '$date', '$time')") or die(mysqli_error($conn));
 		echo '<script type="text/javascript">',
 			'success();',
 			'</script>'
