@@ -140,7 +140,7 @@
 						$ml = "style='margin-left:0'";
 					}; ?>
 					<button class="card-act-add" data-target="#exampleModal" data-toggle="modal" <?php echo ($ml) ?> id="div-add">
-						<img src="src/img/add.png" class="add-icon">
+						<!-- <img src="src/img/add.png" class="add-icon"> -->
 					</button>
 					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document" style="max-width:400px">

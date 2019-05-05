@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2019 at 08:08 AM
+-- Generation Time: May 05, 2019 at 07:56 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -109,7 +109,8 @@ CREATE TABLE `report` (
 --
 
 INSERT INTO `report` (`report_id`, `info`, `user_id`, `date`, `time`) VALUES
-(36, 'Yeah! I got it', 2, '2019-05-05', '08:05:13');
+(36, 'Yeah! I got it', 2, '2019-05-05', '08:05:13'),
+(37, 'รายงานต่างๆ', 8, '2019-05-05', '06:05:07');
 
 -- --------------------------------------------------------
 
@@ -162,7 +163,8 @@ INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `username`, `password`, 
 (2, 'จักรกฤษณ์', 'สอนสนิท', 'test', '0927830040', 'palm8ikaa2@gmail.com', '0927830040', 'customer', ''),
 (3, 'จักรกฤษณ์', 'สอนสนิท', 'test_m', '123456', 'palm8ikaa2@gmail.com', '0927830040', 'merchant', 'src/img/2019-05-04-06-13-test.jpg'),
 (6, 'จักรกฤษณ์', 'sonsanit', 'palm8ikaa2', '1234', 'palm8ikaa2@gmail.com', '927830040', 'merchant', 'src/img/2019-05-03-12-52-23509185_10210731055334146_2241253386649832692_o.jpg'),
-(7, 'จักรกฤษณ์', 'sonsanit', 'test2_m', '1234', 'palm8ikaa2@gmail.com', '0927830040', 'merchant', 'src/img/2019-05-05-07-08-IMG_2176.jpg');
+(7, 'จักรกฤษณ์', 'sonsanit', 'test2_m', '1234', 'palm8ikaa2@gmail.com', '0927830040', 'merchant', 'src/img/2019-05-05-07-08-IMG_2176.jpg'),
+(8, 'จักรกฤษณ์', 'sonsanit', 'toon1', '123', 'palm8ikaa2@gmail.com', '927830040', 'customer', 'src/img/2019-05-05-06-57-palmdeath.jpg');
 
 --
 -- Indexes for dumped tables
@@ -212,13 +214,13 @@ ALTER TABLE `block`
 -- AUTO_INCREMENT for table `promotion`
 --
 ALTER TABLE `promotion`
-  MODIFY `promo_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `promo_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `shop`
@@ -230,7 +232,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

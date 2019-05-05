@@ -105,6 +105,10 @@
     height: 90px;
     margin-left: 5.5%;
     overflow: scroll;
+    background-image: url(../img/add.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 .add-icon {
     width: 40%;
@@ -112,6 +116,8 @@
     margin-left: 30%;
     position: relative;
     top: 50%;
+    max-width: 80px;
+    max-height: 80px;
     transform: translateY(-50%);
 }
 .modal-form {
