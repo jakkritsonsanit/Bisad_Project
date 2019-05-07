@@ -43,7 +43,7 @@
         </button>
         </div>
         <div class="join">
-          <p class="login-help"><span class="notmember">Not a member yet?</span><a href="D:\projectbisad2\signin.html"><strong>&nbsp;Join us now</strong></a></p>
+          <p class="login-help"><span class="notmember">Not a member yet?</span><a href="?page=register"><strong>&nbsp;Join us now</strong></a></p>
         </div>
       </div>
       </form>
